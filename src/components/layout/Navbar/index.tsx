@@ -1,15 +1,13 @@
 'use client';
 
-import {NavbarProps, NavItem} from './types';
+import {NavbarProps} from './types';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
 export default function Navbar({ logoSrc, navItems, loginButton, cartIcon }: NavbarProps) {
     const [showMobileNav, setShowMobileNav] = useState(false);
-
     return (
         <nav className="fixed top-0 left-0 right-0 bg-[#D9C7EA] flex items-center justify-between px-6">
-            {/* Desktop Navigation */}
             <div className='hidden md:flex w-full justify-between items-center'>
                 <div className='flex items-center gap-10'>
                     <img 
@@ -19,8 +17,8 @@ export default function Navbar({ logoSrc, navItems, loginButton, cartIcon }: Nav
                     /> 
                     <div className="flex gap-4 lg:gap-7 uppercase text-[#59467A] text-xs lg:text-sm">
                         {navItems.map((item, index) => (
-                            <div key={item.id} className="flex items-center gap-2 lg:gap-7">
-                                <a href={item.path}>
+                            <div key={item.id} className="flex items-center gap-2 lg:gap-7 ">
+                                <a href={item.path} className='hover:text-[#3a2f50] hover:scale-102 transition-all'>
                                     {item.label}
                                 </a>
                                 {index < navItems.length - 1 && (
@@ -35,15 +33,12 @@ export default function Navbar({ logoSrc, navItems, loginButton, cartIcon }: Nav
                     {cartIcon}
                 </div>
             </div>
-
-            {/* Mobile Navigation */}
             <div className="md:hidden flex items-center justify-between w-full">
                 <img 
                     src={logoSrc} 
                     alt="Luma Skin" 
                     className="h-12"
                 />
-                
                 <div className="flex items-center gap-4">
                     {cartIcon}
                     <button 
@@ -55,8 +50,6 @@ export default function Navbar({ logoSrc, navItems, loginButton, cartIcon }: Nav
                     </button>
                 </div>
             </div>
-
-            {/* Mobile Menu */}
             {showMobileNav && (
                 <div className="fixed top-12 left-0 right-0 bg-[#D9C7EA] md:hidden z-40 shadow-lg border-t border-[#59467A] border-opacity-20 rounded-b-lg">
                     <div className="flex flex-col py-4 px-6">
@@ -64,14 +57,13 @@ export default function Navbar({ logoSrc, navItems, loginButton, cartIcon }: Nav
                             <a 
                                 key={item.id} 
                                 href={item.path} 
-                                className="flex items-center gap-3 text-[#59467A] text-sm px-2 py-3 border-b border-[#59467A] last:border-b-0"
+                                className="flex items-center gap-3 text-[#59467A] text-sm px-2 py-3 border-b border-[#59467A] last:border-b-0 uppercase"
                                 onClick={() => setShowMobileNav(false)}
                             >
                                 <span className="text-lg">{item.icon}</span>
                                 <span className="font-medium">{item.label}</span>
                             </a>
                         ))}
-                        
                         <div className="pt-4 mt-2" onClick={() => setShowMobileNav(false)}>
                             {loginButton}
                         </div>
