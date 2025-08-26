@@ -1,3 +1,5 @@
+'use client';
+
 import { FooterProps } from "./types";
 
 export default function Footer({ phone, socialLinks, logoSrc, copyright }: FooterProps) {
