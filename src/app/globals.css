@@ -1,1 +1,5 @@
 @import "tailwindcss";
+
+.font-radley {
+    font-family: var(--font-radley);
+}

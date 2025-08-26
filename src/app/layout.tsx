@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Radley } from "next/font/google";
 import {ShoppingCart, Home, Contact, ShoppingBasket, Settings, Phone} from "lucide-react";
 import "./globals.css";
 import { FacebookIcon, InstagramIcon, TwitterIcon } from "./../components/ui/SocialIcons";
@@ -11,6 +11,13 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const radley = Radley({
+  subsets: ["latin"],
+  variable: "--font-radley",
+  weight: ["400"],
+  style: ["italic"],
 });
 
 export const metadata: Metadata = {
@@ -46,7 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${montserrat.variable} font-montserrat antialiased min-h-screen flex flex-col`}
+        className={`${montserrat.variable} ${radley.variable} font-montserrat antialiased min-h-screen flex flex-col`}
       >
         <Navbar
           logoSrc="lumaSkin.svg"
@@ -55,7 +62,7 @@ export default function RootLayout({
           cartIcon={cartIcon}
         />
 
-        <main className="flex-1 pt-16">
+        <main className="flex-1 pt-10">
           {children}
         </main>
         
