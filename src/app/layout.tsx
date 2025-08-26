@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import {ShoppingCart, Home, Contact, ShoppingBasket, Settings} from "lucide-react";
+import {ShoppingCart, Home, Contact, ShoppingBasket, Settings, Phone} from "lucide-react";
 import "./globals.css";
+import { FacebookIcon, InstagramIcon, TwitterIcon } from "./../components/ui/SocialIcons";
+
 import Navbar from "./../components/layout/Navbar/index";
+import Footer from "./../components/layout/Footer/index";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -51,9 +54,33 @@ export default function RootLayout({
           loginButton={loginButton}
           cartIcon={cartIcon}
         />
+
         <main className="flex-1 pt-16">
           {children}
         </main>
+        
+        <Footer
+          phone={{
+            icon: <Phone size={22}/>,
+            number: "+1 (555) 123-4567"
+          }}
+          socialLinks={[
+            {
+              icon: <FacebookIcon />,
+              url: "https://facebook.com"
+            },
+            {
+              icon: <TwitterIcon />,
+              url: "https://twitter.com"
+            },
+            {
+              icon: <InstagramIcon />,
+              url: "https://instagram.com"
+            }
+          ]}
+          logoSrc="lumaSkin.svg"
+          copyright="© 2025 Luma Skin. All rights reserved."
+        />
       </body>
     </html>
   );
