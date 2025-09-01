@@ -43,7 +43,7 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
     }, [emblaApi, onSelect]);
 
     return (
-        <section className="py-12 bg-[#f9fafb]">
+        <section className="py-20 bg-[#f9fafb]">
             <div className="container mx-auto px-4">
                 <p className="pl-18 text-4xl md:text-5xl mb-8 text-[#59467A] font-radley italic">our products</p>
                 <div className="relative">
