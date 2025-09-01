@@ -7,7 +7,7 @@ import { Menu, X } from 'lucide-react';
 export default function Navbar({ logoSrc, navItems, loginButton, cartIcon }: NavbarProps) {
     const [showMobileNav, setShowMobileNav] = useState(false);
     return (
-        <nav className="fixed top-0 left-0 right-0 bg-[#D9C7EA] flex items-center justify-between px-6">
+        <nav className="fixed top-0 left-0 right-0 bg-[#D9C7EA] flex items-center justify-between px-6 z-100">
             <div className='hidden md:flex w-full justify-between items-center'>
                 <div className='flex items-center gap-10'>
                     <img 
