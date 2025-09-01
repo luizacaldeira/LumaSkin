@@ -1,4 +1,7 @@
-import { HeroSectionProps } from "./types";
+interface HeroSectionProps {
+    title: string;
+    subtitle: string;
+}
 
 export default function HeroSection(props: HeroSectionProps){
     return(
