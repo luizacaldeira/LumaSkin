@@ -1,9 +1,9 @@
 import db from './db';
 
-export async function getProducts() {
+export async function getProducts(amount: number | undefined) {
     try {
         const products = await db.product.findMany({
-        take: 6,
+        take: amount,
         orderBy: {
             createdAt: 'desc'
         }
