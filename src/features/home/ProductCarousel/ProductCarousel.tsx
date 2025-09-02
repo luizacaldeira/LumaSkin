@@ -1,10 +1,10 @@
 'use client'
 import { ProductCard } from "@/src/components/product-cards/ProductCard";
-import { ProductCarouselProps } from "@/src/components/product-cards/types";
+import { ProductListProps } from "@/src/components/product-cards/types";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 
-export default function ProductCarousel({ products }: ProductCarouselProps) {
+export default function ProductCarousel({ products }: ProductListProps) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ 
         loop: true,
         slidesToScroll: 1,
