@@ -3,8 +3,8 @@ import { getProducts } from '../../../lib/products';
 import { ProductCardProps } from '@/src/components/product-cards/types';
 
 export default async function ProductCarouselWrapper() {
-    const dbProducts = await getProducts();
-    const products: ProductCardProps[] = dbProducts.map((product: any) => ({
+    const dbProducts = await getProducts(6);
+    const products: ProductCardProps[] = dbProducts.map((product) => ({
         title: product.title,
         description: product.description || undefined,
         benefits: product.benefits || undefined,

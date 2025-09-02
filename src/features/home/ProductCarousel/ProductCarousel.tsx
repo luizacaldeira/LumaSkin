@@ -1,12 +1,8 @@
 'use client'
-import { CarouselCard } from "@/src/components/product-cards/CarouselCard";
-import { ProductCardProps } from "@/src/components/product-cards/types";
+import { ProductCard } from "@/src/components/product-cards/ProductCard";
+import { ProductCarouselProps } from "@/src/components/product-cards/types";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
-
-type ProductCarouselProps = {
-    products: ProductCardProps[];
-};
 
 export default function ProductCarousel({ products }: ProductCarouselProps) {
     const [emblaRef, emblaApi] = useEmblaCarousel({ 
@@ -65,7 +61,7 @@ export default function ProductCarousel({ products }: ProductCarouselProps) {
                         <div className="flex">
                             {products.map((product, index) => (
                                 <div key={index} className="flex-[0_0_100%] min-w-0 px-2 md:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
-                                    <CarouselCard 
+                                    <ProductCard 
                                         title={product.title} 
                                         imageUrl={product.imageUrl} 
                                         price={product.price}

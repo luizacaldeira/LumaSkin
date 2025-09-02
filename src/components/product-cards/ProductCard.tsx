@@ -8,7 +8,7 @@ import {
     CardFooter,
 } from "@/src/components/ui/card"
 
-export function CarouselCard(props: ProductCardProps) {
+export function ProductCard(props: ProductCardProps) {
     return (
         <Card className="bg-[#d9c7ea44] text-[#201324]">
             <CardHeader>
