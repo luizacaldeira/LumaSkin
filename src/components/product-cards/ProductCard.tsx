@@ -1,4 +1,5 @@
 'use client'
+import { useRouter } from "next/navigation";
 import { ProductCardProps } from "./types";
 import {
     Card,
@@ -7,8 +8,15 @@ import {
     CardContent,
     CardFooter,
 } from "@/src/components/ui/card"
+import IndividualProduct from "@/src/app/individual-product/page";
 
 export function ProductCard(props: ProductCardProps) {
+    const router = useRouter();
+
+    const handleButtonClick = () => {
+        router.push('/individual-product');
+    };
+
     return (
         <Card className="bg-[#d9c7ea44] text-[#201324]">
             <CardHeader>
@@ -22,7 +30,7 @@ export function ProductCard(props: ProductCardProps) {
             <CardFooter>
                 <button 
                 className="bg-[#493a64] text-[#F1EDF9] font-radley italic text-sm sm:text-base md:text-lg lg:text-xl px-2 py-1 sm:px-2.5 sm:py-1 md:px-4 md:py-1 rounded-full cursor-pointer hover:bg-[#312742] hover:scale-103 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
-                onClick={props.onButtonClick}>{props.buttonText}</button>
+                onClick={handleButtonClick}>{props.buttonText}</button>
             </CardFooter>
         </Card>
     );
