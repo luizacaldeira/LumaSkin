@@ -1,4 +1,3 @@
-import { ProductCard } from "@/src/components/product-cards/ProductCard";
 import { ProductCardProps } from "@/src/components/product-cards/types";
 import {Lamp, Lightbulb} from "lucide-react"
 
