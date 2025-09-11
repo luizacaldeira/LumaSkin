@@ -3,8 +3,9 @@
 import {NavbarProps} from './types';
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import { ShoppingCart } from 'lucide-react';
 
-export default function Navbar({ logoSrc, navItems, loginButton, cartIcon }: NavbarProps) {
+export default function Navbar({ logoSrc, navItems, loginButton }: NavbarProps) {
     const [showMobileNav, setShowMobileNav] = useState(false);
     return (
         <nav className="fixed top-0 left-0 right-0 bg-[#D9C7EA] flex items-center justify-between px-6 z-100">
@@ -29,8 +30,12 @@ export default function Navbar({ logoSrc, navItems, loginButton, cartIcon }: Nav
                     </div>
                 </div>
                 <div className="flex items-center gap-2 lg:gap-4">
-                    {loginButton}
-                    {cartIcon}
+                    <div>{loginButton}</div>
+                    <a href="/cart">
+                        <div className="flex h-full w-full items-center cursor-pointer transition-colors">
+                            <ShoppingCart size={25} color="#59467A" />
+                        </div>
+                    </a>
                 </div>
             </div>
             <div className="md:hidden flex items-center justify-between w-full">
@@ -40,7 +45,11 @@ export default function Navbar({ logoSrc, navItems, loginButton, cartIcon }: Nav
                     className="h-12"
                 />
                 <div className="flex items-center gap-4">
-                    {cartIcon}
+                    <a>
+                        <div>
+                            <ShoppingCart size={24} color="#59467A" />
+                        </div>
+                    </a>
                     <button 
                         onClick={() => setShowMobileNav(!showMobileNav)}
                         className="p-2 text-[#59467A] focus:outline-none"

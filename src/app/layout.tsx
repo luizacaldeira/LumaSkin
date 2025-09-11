@@ -59,7 +59,6 @@ export default function RootLayout({
           logoSrc="lumaSkin.svg"
           navItems={navItems}
           loginButton={loginButton}
-          cartIcon={cartIcon}
         />
 
         <main className="flex-1 pt-10">

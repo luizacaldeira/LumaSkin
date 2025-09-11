@@ -8,5 +8,4 @@ export interface NavbarProps{
     logoSrc: string;
     navItems: NavItem[];
     loginButton: React.ReactNode;
-    cartIcon: React.ReactNode;
 }
