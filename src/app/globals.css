@@ -122,3 +122,30 @@
     @apply bg-background text-foreground;
     }
 }
+
+.animated-gradient {
+    background: radial-gradient(ellipse at 50% 50%, #79639e 0%, #e0d0f0 50%, #f8f6fb 100%);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    20% {
+        background-position: 30% 70%;
+    }
+    40% {
+        background-position: 70% 40%;
+    }
+    60% {
+        background-position: 100% 80%;
+    }
+    80% {
+        background-position: 60% 20%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
