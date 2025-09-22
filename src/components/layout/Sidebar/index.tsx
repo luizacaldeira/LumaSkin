@@ -12,7 +12,7 @@ import {
 } from 'lucide-react';
 
 export default function Sidebar() {
-    const [isOpen, setIsOpen] = useState(true);
+    const [isOpen, setIsOpen] = useState(false);
     const [isMobileOpen, setIsMobileOpen] = useState(false);
 
     const sidebarData = {
@@ -52,7 +52,6 @@ export default function Sidebar() {
 
             {isMobileOpen && (
                 <div 
-                className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
                 onClick={() => setIsMobileOpen(false)}
                 />
             )}
