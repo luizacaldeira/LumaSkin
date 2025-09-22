@@ -29,7 +29,7 @@ export default function LoginPage() {
     };
 
     return (
-        <div className="flex min-h-screen justify-center items-center p-4 animated-gradient ">
+        <div className="flex min-h-screen justify-center items-center p-4 animated-gradient ">  
             <Link 
                 href="/" 
                 className="absolute top-6 left-6 flex items-center gap-2 text-white/90 hover:text-white transition-colors bg-black/20 hover:bg-black/30 backdrop-blur-sm rounded-full px-4 py-2"
@@ -101,28 +101,9 @@ export default function LoginPage() {
                                 </button>
                             </div>
                         </div>
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center">
-                                <input
-                                    id="remember-me"
-                                    name="remember-me"
-                                    type="checkbox"
-                                    className="h-4 w-4 text-[#493a64] focus:ring-[#493a64] border-gray-300 rounded"
-                                />
-                                <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-700">
-                                    Remember me
-                                </label>
-                            </div>
-                            <Link
-                                href="/forgot-password"
-                                className="text-sm text-[#493a64] hover:text-[#312742] transition-colors"
-                            >
-                                Forgot password?
-                            </Link>
-                        </div>
                         <button
                             type="submit"
-                            className="w-full bg-[#493a64] hover:bg-[#312742] text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#493a64] focus:ring-offset-2"
+                            className="w-full cursor-pointer bg-[#493a64] hover:bg-[#312742] text-white font-semibold py-3 px-4 rounded-lg transition-all duration-300 transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#493a64] focus:ring-offset-2"
                         >
                             Sign In
                         </button>
