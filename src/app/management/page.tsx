@@ -8,11 +8,10 @@ export default async function ManagementPageWrapper() {
     const products: ProductCardProps[] = dbProducts.map((product) => ({
         id: product.id,
         title: product.title,
-        description: product.description || undefined,
-        benefits: product.benefits || undefined,
+        description: product.description || '',
+        benefits: product.benefits || '',
         price: product.price,
-        imageUrl: product.imageUrl || undefined,
-        variant: product.variant || [],
+        imageUrl: product.imageUrl || '',
         buttonText: 'see more',
         imageFallback: !product.imageUrl ? <ImageOff size={32} /> : undefined
     }));
