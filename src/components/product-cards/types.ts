@@ -1,11 +1,10 @@
 export interface ProductCardProps {
-    id?: number;
+    id: number;
     title: string;
-    description?: string;
-    benefits?: string;
-    imageUrl?: string;
+    description: string;
+    benefits: string;
+    imageUrl: string;
     price: number;
-    variant?: string[];
     buttonText?: string;
     onButtonClick?: () => void;
 }

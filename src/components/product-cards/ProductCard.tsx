@@ -8,14 +8,8 @@ import {
     CardContent,
     CardFooter,
 } from "@/src/components/ui/card"
-import IndividualProduct from "@/src/app/individual-product/page";
 
-export function ProductCard(props: ProductCardProps) {
-    const router = useRouter();
-
-    const handleButtonClick = () => {
-        router.push('/individual-product');
-    };
+export function ProductCard(props: ProductCardProps){
 
     return (
         <Card className="bg-[#d9c7ea44] text-[#201324]">
@@ -25,12 +19,11 @@ export function ProductCard(props: ProductCardProps) {
             <CardContent>
                 <CardTitle className="text-2xl font-radley italic">{props.title}</CardTitle>
                 <div className="text-[#201324ab] font-bold">{`R$ ${props.price}`}</div>
-                <div>{props.variant?.join(" - ")}</div>
             </CardContent>
             <CardFooter>
                 <button 
                 className="bg-[#493a64] text-[#F1EDF9] font-radley italic text-sm sm:text-base md:text-lg lg:text-xl px-2 py-1 sm:px-2.5 sm:py-1 md:px-4 md:py-1 rounded-full cursor-pointer hover:bg-[#312742] hover:scale-103 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md"
-                onClick={handleButtonClick}>{props.buttonText}</button>
+                onClick={() => props.onButtonClick?.()}>{props.buttonText}</button>
             </CardFooter>
         </Card>
     );

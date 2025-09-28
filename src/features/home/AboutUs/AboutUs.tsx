@@ -15,7 +15,7 @@ export default function AboutUs({ cards }: AboutUsProps) {
         <section className="py-20 bg-gradient-to-b from-[#493a6425] via-[#F9FAFB] to-[#F9FAFB]">
             <div className="container mx-auto px-4">
                 <p className="pl-18 text-4xl md:text-5xl mb-8 text-[#59467A] font-radley italic">about us</p>
-                <div className="flex gap-15 px-16">
+                <div className="flex flex-col gap-15 px-16 lg:flex-row ">
                     {cards.map((card, index) => (
                         <Card key={index} className="bg-[#d9c7ea44] text-[#201324] text-center">
                             <CardHeader>

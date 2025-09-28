@@ -5,13 +5,13 @@ import { ImageOff } from "lucide-react";
 
 export default async function ProductListWrapper() {
     const dbProducts = await getProducts(undefined);
-    const products: ProductCardProps[] = dbProducts.map((product) => ({
+    const products: ProductCardProps[] = dbProducts.map((product: any) => ({
+        id: product.id,
         title: product.title,
         description: product.description || undefined,
         benefits: product.benefits || undefined,
         price: product.price,
         imageUrl: product.imageUrl || undefined,
-        variant: product.variant || [],
         buttonText: 'see more',
         imageFallback: !product.imageUrl ? <ImageOff size={32} /> : undefined
     }));
