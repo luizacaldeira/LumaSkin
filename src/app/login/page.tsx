@@ -21,7 +21,7 @@ export default function LoginPage() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log('Login data:', formData);
+        //logic would go here
     };
 
     const togglePasswordVisibility = () => {
