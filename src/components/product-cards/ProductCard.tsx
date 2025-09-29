@@ -8,13 +8,21 @@ import {
     CardContent,
     CardFooter,
 } from "@/src/components/ui/card"
+import { ImageOff } from "lucide-react";
 
 export function ProductCard(props: ProductCardProps){
 
     return (
         <Card className="bg-[#d9c7ea44] text-[#201324]">
             <CardHeader>
-            <img src={props.imageUrl} alt={props.title} className="object-cover w-full h-70 2xl:h-100" />
+                {props.imageUrl && (
+                    <img src={props.imageUrl} alt={props.title} className="object-cover w-full h-70 2xl:h-100" />
+                )}
+                {!props.imageUrl && (
+                    <div className="flex items-center justify-center w-full h-70 2xl:h-100 bg-[#f1edf9] text-[#201324ab]">
+                        <ImageOff className="w-12 h-12" />
+                    </div>
+                )}
             </CardHeader>
             <CardContent>
                 <CardTitle className="text-2xl font-radley italic">{props.title}</CardTitle>
