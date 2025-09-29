@@ -24,7 +24,7 @@ export default async function IndividualProduct( {params}: IndividualProductProp
                 </Link>
             <div className="flex flex-col items-center bg-[#d9c7eabe] justify-center text-[#201324] w-fit p-10 rounded-2xl gap-10 lg:flex-row">
                 <div className="h-full">
-                    <img src={product.imageUrl || ''} alt={product.title} className="h-fit object-contain"/>
+                    <img src={product.imageUrl || ''} alt={product.title} className="h-100 object-contains"/>
                 </div>
                 <div className="flex flex-col gap-1">
                     <p className="font-radley text-4xl mb-3">{product.title}</p>

@@ -23,7 +23,7 @@ export default function AboutUs({ cards }: AboutUsProps) {
                                 <CardTitle className="font-radley italic text-3xl">{card.title}</CardTitle>
                         </CardHeader>
                         <CardContent>
-                            <p>{card.content}</p>
+                            <p className="text-sm" >{card.content}</p>
                         </CardContent>
                     </Card>
                 ))}
