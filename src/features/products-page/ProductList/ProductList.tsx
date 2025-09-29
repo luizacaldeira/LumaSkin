@@ -11,9 +11,7 @@ export default function ProductList({ products }: ProductListProps) {
     const { currentPage, handlePageChange } = usePagination();
     const searchParams = useSearchParams();
     const searchQuery = searchParams.get('search') || '';
-    
-    // Filtrar produtos baseado na busca
-    const filteredProducts = searchQuery 
+        const filteredProducts = searchQuery 
         ? products.filter(product => 
             product.title?.toLowerCase().includes(searchQuery.toLowerCase())
         )

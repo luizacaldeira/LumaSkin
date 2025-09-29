@@ -40,7 +40,7 @@ export default function SearchBox() {
                 placeholder="Search skincare products..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                onKeyPress={handleKeyPress}
+                onKeyDown={handleKeyPress}
             />
             <button 
                 onClick={handleSearch}
