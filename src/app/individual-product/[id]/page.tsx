@@ -22,9 +22,9 @@ export default async function IndividualProduct( {params}: IndividualProductProp
                         <ArrowLeft size={20} />
                         <div>Back to Products</div>
                 </Link>
-            <div className="flex items-center bg-[#d9c7eabe] justify-center text-[#201324] w-fit p-10 rounded-2xl gap-10">
+            <div className="flex flex-col items-center bg-[#d9c7eabe] justify-center text-[#201324] w-fit p-10 rounded-2xl gap-10 lg:flex-row">
                 <div className="h-full">
-                    <img src={product.imageUrl || ''} alt={product.title} className="h-100"/>
+                    <img src={product.imageUrl || ''} alt={product.title} className="h-fit object-contain"/>
                 </div>
                 <div className="flex flex-col gap-1">
                     <p className="font-radley text-4xl mb-3">{product.title}</p>
