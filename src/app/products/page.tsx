@@ -4,10 +4,7 @@ import ProductListWrapper from "@/src/features/products-page/ProductList/Product
 
 function ProductsPageContent() {
     return (
-        <div className="flex flex-col p-5 gap-5 py-12">
-            <div className="flex w-full"><SearchBox /></div>
-            <ProductListWrapper/>
-        </div>
+        <ProductListWrapper/>
     );
 }
 

@@ -1,17 +1,22 @@
-import { NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { prisma, defaultSelectFields } from '../../../../prisma/database/prismaClient';
+import { getProductByName } from '@/src/lib/products';
 
-export async function GET() {
+export async function GET(request: NextRequest) {
     try {
-        const products = await prisma.product.findMany({
-            select: defaultSelectFields,
-            orderBy: { createdAt: 'desc' }
-        });
-        return products;
+        const { searchParams } = new URL(request.url);
+        const query = searchParams.get('q');
+
+        if (!query || query.trim() === '') {
+        return NextResponse.json({ products: [] });
+        }
+
+        const products = await getProductByName(query);
+        return NextResponse.json({ products });
     } catch (error) {
-        console.error('Error fetching products:', error);
-        return Response.json(
-            { error: 'Failed to fetch products' },
+        console.error('Erro ao buscar produtos:', error);
+        return NextResponse.json(
+            { error: 'Erro interno do servidor' },
             { status: 500 }
         );
     }

@@ -1,3 +1,4 @@
+import { NextResponse } from 'next/server';
 import { prisma, defaultSelectFields } from '../../prisma/database/prismaClient';
 
 
@@ -29,6 +30,27 @@ export async function getProductById(id: number) {
     } catch (error) {
         console.error('Erro ao buscar produto:', error);
         return null;
+    }
+}
+
+export async function getProductByName(name: string) {
+    try {
+        const products = await prisma.product.findMany({
+            where: { 
+                title: {
+                    contains: name,
+                    mode: 'insensitive'
+                }
+            },
+            select: defaultSelectFields,
+            orderBy: {
+                createdAt: 'desc'
+            }
+        });
+        return products;
+    } catch (error) {
+        console.error('Erro ao buscar produtos por nome:', error);
+        return [];
     }
 }
 
