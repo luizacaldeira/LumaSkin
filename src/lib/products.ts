@@ -19,7 +19,6 @@ export async function getProducts(amount?: number) {
     }
 }
 
-
 export async function getProductById(id: number) {
     try {
         const product = await prisma.product.findUnique({

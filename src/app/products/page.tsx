@@ -10,7 +10,7 @@ function ProductsPageContent() {
 
 export default function ProductsPage() {
     return (
-        <Suspense fallback={<div>Carregando produtos...</div>}>
+        <Suspense>
             <ProductsPageContent />
         </Suspense>
     );
