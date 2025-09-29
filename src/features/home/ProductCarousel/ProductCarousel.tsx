@@ -40,7 +40,7 @@ export default function ProductCarousel({ products }: ProductListProps) {
 
     return (
         <section className="py-20 bg-[#f9fafb]">
-            <div className="container mx-auto px-4">
+            <div className="container mx-auto px-0 lg:px-4">
                 <p className="pl-18 text-4xl md:text-5xl mb-8 text-[#59467A] font-radley italic">our products</p>
                 <div className="relative">
                     <button
@@ -61,14 +61,13 @@ export default function ProductCarousel({ products }: ProductListProps) {
                         <div className="flex">
                             {products.map((product, index) => (
                                 <div key={index} className="flex-[0_0_100%] min-w-0 px-2 md:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
-                                    <ProductCard 
+                                    <ProductCard
+                                        id={product.id}
                                         title={product.title} 
                                         imageUrl={product.imageUrl} 
                                         price={product.price}
                                         description={product.description}
                                         benefits={product.benefits}
-                                        variant={product.variant}
-                                        buttonText="see more" 
                                     />
                                 </div>
                             ))}
