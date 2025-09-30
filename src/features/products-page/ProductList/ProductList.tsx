@@ -50,6 +50,7 @@ export default function ProductList({ products }: ProductListProps) {
                                 key={product.id}
                                 {...product}
                                 onButtonClick={() => handleButtonClick(product.id)}
+                                buttonText="see more"
                             />
                         ))}
                     </div>
