@@ -4,7 +4,7 @@ import { Edit, Eye, Trash, PlusIcon } from "lucide-react";
 import { ProductListProps } from "@/src/components/product-cards/types";
 import { usePagination } from "@/src/hooks/usePagination";
 import CustomPagination, { getPaginationIndices } from "@/src/components/ui/CustomPagination";
-import Dialog from "../../components/dialog/index";
+import Dialog from '@/src/components/dialog';
 import { useProductManager } from "@/src/hooks/useProductManager";
 import { useRouter } from "next/navigation";
 
@@ -62,11 +62,11 @@ export default function ManagementPage({ products }: ProductListProps) {
                                     <td className="py-2 sm:py-3 px-2 sm:px-4 text-xs sm:text-sm">{product.id}</td>
                                     <td className="py-2 sm:py-3 px-2 sm:px-4 text-xs sm:text-sm font-medium">{product.title}</td>
                                     <td className="py-2 sm:py-3 px-2 sm:px-4 text-xs sm:text-sm text-gray-600">
-                                        <div className="truncate" title={product.description}>
+                                        <div className="truncate" title={product.description || undefined}>
                                             {product.description}
                                         </div>
                                     </td>
-                                    <td className="py-2 sm:py-3 px-2 sm:px-4 text-xs sm:text-sm text-right font-medium">${product.price}</td>
+                                        <td className="py-2 sm:py-3 px-2 sm:px-4 text-xs sm:text-sm text-right font-medium">${product.price}</td>
                                     <td className="py-2 sm:py-3 px-2 sm:px-4">
                                         <div className="flex justify-center gap-2 sm:gap-4">
                                             <Eye 
