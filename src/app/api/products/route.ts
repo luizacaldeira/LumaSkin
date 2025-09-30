@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { prisma, defaultSelectFields } from '../../../../prisma/database/prismaClient';
-import { getProductByName } from '@/src/lib/products';
+import { getProductByName } from '@/lib/products';
 
 
 export async function GET(request: NextRequest) {

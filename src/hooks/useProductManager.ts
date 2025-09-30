@@ -72,7 +72,7 @@ export function useProductManager(refreshProducts: () => void) {
         setFormData({
             title: product.title,
             price: product.price,
-            description: product.description,
+            description: product.description || "",
             benefits: product.benefits || "",
             image: null,
         });
@@ -85,7 +85,7 @@ export function useProductManager(refreshProducts: () => void) {
         setFormData({
             title: product.title,
             price: product.price,
-            description: product.description,
+            description: product.description || "",
             benefits: product.benefits || "",
             image: null,
         });

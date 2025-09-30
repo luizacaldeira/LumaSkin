@@ -1,11 +1,11 @@
 'use client';
 
 import { Edit, Eye, Trash, PlusIcon } from "lucide-react";
-import { ProductListProps } from "@/src/components/product-cards/types";
-import { usePagination } from "@/src/hooks/usePagination";
-import CustomPagination, { getPaginationIndices } from "@/src/components/ui/CustomPagination";
-import Dialog from '@/src/components/dialog';
-import { useProductManager } from "@/src/hooks/useProductManager";
+import { ProductListProps } from "@/components/product-cards/types";
+import { usePagination } from "@/hooks/usePagination";
+import CustomPagination, { getPaginationIndices } from "@/components/ui/CustomPagination";
+import Dialog from '@/components/dialog';
+import { useProductManager } from "@/hooks/useProductManager";
 import { useRouter } from "next/navigation";
 
 export default function ManagementPage({ products }: ProductListProps) {

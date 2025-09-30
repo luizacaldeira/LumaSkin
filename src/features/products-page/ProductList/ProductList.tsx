@@ -1,11 +1,11 @@
 'use client'
-import { ProductCard } from "@/src/components/product-cards/ProductCard";
-import { ProductListProps} from "@/src/components/product-cards/types";
-import { usePagination } from "@/src/hooks/usePagination";
-import CustomPagination from "@/src/components/ui/CustomPagination";
-import { getPaginationIndices } from "@/src/components/ui/CustomPagination";
+import { ProductCard } from "@/components/product-cards/ProductCard";
+import { ProductListProps} from "@/components/product-cards/types";
+import { usePagination } from "@/hooks/usePagination";
+import CustomPagination from "@/components/ui/CustomPagination";
+import { getPaginationIndices } from "@/components/ui/CustomPagination";
 import { useRouter, useSearchParams } from "next/navigation";
-import SearchBox from "@/src/components/ui/SearchBox";
+import SearchBox from "@/components/ui/SearchBox";
 
 export default function ProductList({ products }: ProductListProps) {
     const { currentPage, handlePageChange } = usePagination();
