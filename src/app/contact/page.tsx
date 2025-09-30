@@ -3,6 +3,7 @@ import ContactCard from "../../components/contact-card";
 import ContactForm from "../../components/contact-form";
 import StoreMap from "../../components/store-map";
 
+
 export default function ContactPage() {
     return (
         <div className="flex flex-col p-5 py-12 gap-5">

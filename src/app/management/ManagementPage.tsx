@@ -4,7 +4,7 @@ import { Edit, Eye, Trash, PlusIcon } from "lucide-react";
 import { ProductListProps } from "@/src/components/product-cards/types";
 import { usePagination } from "@/src/hooks/usePagination";
 import CustomPagination, { getPaginationIndices } from "@/src/components/ui/CustomPagination";
-import Dialog from "@/src/components/Dialog";
+import Dialog from "@/src/components/dialog";
 import { useProductManager } from "@/src/hooks/useProductManager";
 import { useRouter } from "next/navigation";
 
