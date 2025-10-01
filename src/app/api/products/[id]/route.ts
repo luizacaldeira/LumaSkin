@@ -1,15 +1,15 @@
 import { NextRequest } from 'next/server';
 import { prisma, defaultSelectFields } from '../../../../../prisma/database/prismaClient';
 
-interface RouteParams {
-    params: {
+interface RouteContext {
+    params: Promise<{
         id: string;
-    };
+    }>;
 }
 
-export async function GET(request: NextRequest, { params }: RouteParams) {
+export async function GET(request: NextRequest, context: RouteContext) {
     try {
-        const { id } = params;
+        const { id } = await context.params;
         const product = await prisma.product.findUnique({
             where: { id: parseInt(id) },
             select: defaultSelectFields
@@ -32,9 +32,9 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
     }
 }
 
-export async function PUT(request: NextRequest, { params }: RouteParams) {
+export async function PUT(request: NextRequest, context: RouteContext) {
     try {
-        const { id } = params;
+        const { id } = await context.params;
         const body = await request.json();
         const { title, price, description, benefits, imageUrl } = body;
 
@@ -67,9 +67,9 @@ export async function PUT(request: NextRequest, { params }: RouteParams) {
     }
 }
 
-export async function DELETE(request: NextRequest, { params }: RouteParams) {
+export async function DELETE(request: NextRequest, context: RouteContext) {
     try {
-        const { id } = params;
+        const { id } = await context.params;
         await prisma.product.delete({
             where: { id: parseInt(id) }
         });
