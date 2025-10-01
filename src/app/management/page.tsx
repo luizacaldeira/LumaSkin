@@ -2,8 +2,9 @@ import { ProductCardProps } from "@/components/product-cards/types";
 import { getProducts } from "@/lib/products";
 import { ImageOff } from "lucide-react";
 import ManagementPage from "./ManagementPage";
+import { Suspense } from "react";
 
-export default async function ManagementPageWrapper() {
+async function ManagementPageWrapper() {
     const dbProducts = await getProducts(undefined);
     const products: ProductCardProps[] = dbProducts.map((product) => ({
         id: product.id,
@@ -15,5 +16,13 @@ export default async function ManagementPageWrapper() {
         buttonText: 'see more',
         imageFallback: !product.imageUrl ? <ImageOff size={32} /> : undefined
     }));
-    return <ManagementPage products={products} />;
+    return (
+        <Suspense>
+            <ManagementPage products={products} />
+        </Suspense>
+    );
+}
+
+export default async function Page() {
+    return (<ManagementPageWrapper />);
 }
