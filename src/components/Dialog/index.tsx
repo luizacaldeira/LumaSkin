@@ -1,7 +1,7 @@
 import FormInput from '../ui/form-input';
 import { FormEvent } from 'react';
 import { DialogProps } from './types';
-import {Trash, Trash2, X} from 'lucide-react';
+import { Trash2, X} from 'lucide-react';
 
 export default function Dialog({ type, product, onClose, onSubmit, formData, setFormData, error, handleImageChange }: DialogProps) {
 

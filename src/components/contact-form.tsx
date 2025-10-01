@@ -1,6 +1,6 @@
 'use client'
 
-import FormInput from "@/src/components/ui/form-input";
+import FormInput from "@/components/ui/form-input";
 import { useState } from "react";
 
 export type emailTemplate = {

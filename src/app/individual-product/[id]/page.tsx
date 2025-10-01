@@ -1,4 +1,4 @@
-import { getProductById } from "@/src/lib/products";
+import { getProductById } from "@/lib/products";
 import {ArrowLeft, Lightbulb} from "lucide-react"
 import Link from "next/link";
 

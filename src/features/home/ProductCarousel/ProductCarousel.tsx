@@ -1,6 +1,6 @@
 'use client'
-import { ProductCard } from "@/src/components/product-cards/ProductCard";
-import { ProductListProps } from "@/src/components/product-cards/types";
+import { ProductCard } from "@/components/product-cards/ProductCard";
+import { ProductListProps } from "@/components/product-cards/types";
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 

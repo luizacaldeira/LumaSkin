@@ -1,6 +1,6 @@
 import React from 'react';
-import CartItem from '@/src/components/cart-item';
-import CartSummary from '@/src/components/cart-summary';
+import CartItem from '@/components/cart-item';
+import CartSummary from '@/components/cart-summary';
 
 export default function CartPage() {
 

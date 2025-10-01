@@ -1,5 +1,5 @@
-import { ProductCardProps } from "@/src/components/product-cards/types";
-import { getProducts } from "@/src/lib/products";
+import { ProductCardProps } from "@/components/product-cards/types";
+import { getProducts } from "@/lib/products";
 import { ImageOff } from "lucide-react";
 import ManagementPage from "./ManagementPage";
 

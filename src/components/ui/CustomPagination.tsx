@@ -6,8 +6,7 @@ import {
     PaginationLink,
     PaginationNext,
     PaginationPrevious,
-} from "@/src/components/ui/pagination";
-import { start } from "repl";
+} from "@/components/ui/pagination";
 
 
 interface CustomPaginationProps {

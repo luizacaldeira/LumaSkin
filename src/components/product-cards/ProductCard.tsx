@@ -1,5 +1,4 @@
 'use client'
-import { useRouter } from "next/navigation";
 import { ProductCardProps } from "./types";
 import {
     Card,
@@ -7,7 +6,7 @@ import {
     CardTitle,
     CardContent,
     CardFooter,
-} from "@/src/components/ui/card"
+} from "@/components/ui/card"
 import { ImageOff } from "lucide-react";
 
 export function ProductCard(props: ProductCardProps){

@@ -1,4 +1,4 @@
-import { getIdentities } from '@/src/app/api/get-mvv';
+import { getIdentities } from '@/app/api/get-mvv';
 import AboutUs from './AboutUs';
 import { Target, Lightbulb, Gem } from 'lucide-react';
 
