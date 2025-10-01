@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { DialogTypes } from '../components/dialog/types';
+import { DialogTypes } from '../components/Dialog/types';
 import { ProductCardProps } from '../components/product-cards/types';
 
 interface ProductFormData {
