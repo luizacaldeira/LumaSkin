@@ -1,6 +1,8 @@
 import { NextRequest } from 'next/server';
 import { prisma, defaultSelectFields } from '../../../../../prisma/database/prismaClient';
 
+export const dynamic = 'force-dynamic';
+
 interface RouteContext {
     params: Promise<{
         id: string;
