@@ -17,7 +17,7 @@ async function ManagementPageWrapper() {
         imageFallback: !product.imageUrl ? <ImageOff size={32} /> : undefined
     }));
     return (
-        <Suspense>
+        <Suspense fallback={<div>Loading...</div>}> 
             <ManagementPage products={products} />
         </Suspense>
     );
