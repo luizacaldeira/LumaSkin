@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { prisma, defaultSelectFields } from '../../../../prisma/database/prismaClient';
 import { getProductByName } from '@/lib/products';
 
+export const dynamic = 'force-dynamic';
 
 export async function GET(request: NextRequest) {
     try {
