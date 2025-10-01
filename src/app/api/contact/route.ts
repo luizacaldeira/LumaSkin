@@ -1,6 +1,8 @@
 import { Resend } from 'resend';
 import { NextRequest, NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 console.log('RESEND_API_KEY:', process.env.RESEND_API_KEY ? 'Loaded' : 'Not loaded');
 
 const resend = new Resend(process.env.RESEND_API_KEY);
