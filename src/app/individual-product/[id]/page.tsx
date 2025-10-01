@@ -3,13 +3,14 @@ import {ArrowLeft, Lightbulb} from "lucide-react"
 import Link from "next/link";
 
 interface IndividualProductProps {
-    params: {
+    params: Promise<{
         id: string;
-    }
+    }>
 }
 
 export default async function IndividualProduct( {params}: IndividualProductProps) {
-    const product = await getProductById(parseInt(params.id));
+    const {id} = await params;
+    const product = await getProductById(parseInt(id));
     if (!product) {
         return <div>Product not found</div>;
     }
