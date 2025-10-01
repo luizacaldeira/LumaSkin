@@ -2,6 +2,8 @@ import { getProductById } from "@/lib/products";
 import {ArrowLeft, Lightbulb} from "lucide-react"
 import Link from "next/link";
 
+export const dynamic = 'force-dynamic';
+
 interface IndividualProductProps {
     params: Promise<{
         id: string;
