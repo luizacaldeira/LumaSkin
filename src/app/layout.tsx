@@ -34,6 +34,9 @@ export default function RootLayout({
   if (isLoginPage) {
     return (
       <html lang="en">
+        <head>
+          <link rel="icon" href="/favicon.png" />
+        </head>
         <body className={`${montserrat.variable} ${radley.variable} font-montserrat antialiased`}>
           {children}
         </body>
@@ -43,6 +46,9 @@ export default function RootLayout({
   if (isManagementPage) {
     return (
       <html lang="en">
+        <head>
+          <link rel="icon" href="/favicon.png" />
+        </head>
         <body className={`${montserrat.variable} ${radley.variable} font-montserrat antialiased`}>
           <Sidebar />
           <main className="flex-1 pt-10">
@@ -55,6 +61,9 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.png" />
+      </head>
       <body
         className={`${montserrat.variable} ${radley.variable} font-montserrat antialiased min-h-screen flex flex-col`}
       >
