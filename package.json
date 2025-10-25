@@ -6,10 +6,12 @@
     "seed": "tsx prisma/seed.ts"
   },
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+  "dev": "next dev --turbopack",
+  "build": "next build",
+  "vercel-build": "prisma generate && next build",
+  "postinstall": "prisma generate",
+  "start": "next start",
+  "lint": "next lint"
   },
   "dependencies": {
     "@prisma/client": "^6.15.0",

@@ -1,6 +1,5 @@
 import { PrismaClient } from '@prisma/client';
 
-// Global singleton to avoid multiple instances during HMR/dev
 const globalForPrisma = globalThis as unknown as {
     prisma?: PrismaClient;
 };
@@ -15,9 +14,6 @@ function createPrismaClient() {
     return client;
 }
 
-// Proxy that defers PrismaClient creation until first use.
-// This helps avoid Prisma trying to load the query engine at import/build time
-// (which can fail when DATABASE_URL isn't available during the build).
 const prisma = new Proxy({} as PrismaClient, {
     get(_target, prop: string | symbol) {
         if (!_prismaClient) {
@@ -29,11 +25,9 @@ const prisma = new Proxy({} as PrismaClient, {
             _prismaClient = createPrismaClient();
         }
         const value = ( _prismaClient as unknown as any)[prop];
-        // If it's a function, bind it to the client
         if (typeof value === 'function') return value.bind(_prismaClient);
         return value;
     },
-    // support calling as a function in case some code does `prisma()` (unlikely)
     apply(_target, _thisArg, _args) {
         if (!_prismaClient) {
             if (!process.env.DATABASE_URL) {
