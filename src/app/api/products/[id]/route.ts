@@ -3,13 +3,7 @@ import { prisma, defaultSelectFields } from '../../../../../prisma/database/pris
 
 export const dynamic = 'force-dynamic';
 
-interface RouteContext {
-    params: {
-        id: string;
-    };
-}
-
-export async function GET(request: NextRequest, context: RouteContext) {
+export async function GET(request: NextRequest, context: any) {
     try {
         const { id } = context.params;
         const product = await prisma.product.findUnique({
@@ -34,7 +28,7 @@ export async function GET(request: NextRequest, context: RouteContext) {
     }
 }
 
-export async function PUT(request: NextRequest, context: RouteContext) {
+export async function PUT(request: NextRequest, context: any) {
     try {
     const { id } = context.params;
         const body = await request.json();
@@ -60,6 +54,7 @@ export async function PUT(request: NextRequest, context: RouteContext) {
         });
 
         return NextResponse.json(product);
+        
     } catch (error) {
         console.error('Error updating product:', error);
         return NextResponse.json(
@@ -69,7 +64,7 @@ export async function PUT(request: NextRequest, context: RouteContext) {
     }
 }
 
-export async function DELETE(request: NextRequest, context: RouteContext) {
+export async function DELETE(request: NextRequest, context: any) {
     try {
         const { id } = context.params;
         await prisma.product.delete({
