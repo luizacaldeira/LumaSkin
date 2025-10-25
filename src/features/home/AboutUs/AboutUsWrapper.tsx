@@ -1,4 +1,3 @@
-import { getIdentities } from '@/app/api/get-mvv';
 import AboutUs from './AboutUs';
 import { Target, Lightbulb, Gem } from 'lucide-react';
 
@@ -9,17 +8,22 @@ const ICON_PROPS = {
 } as const;
 
 export default async function AboutUsWrapper() {
-    const data = await getIdentities();
-    
-    const cards = data.map((item, index) => {
-        const IconComponent = ICON_COMPONENTS[index];
-        
-        return {
-            icon: <IconComponent {...ICON_PROPS} />,
-            title: item.title,
-            content: item.text
-        };
-    });
-
+    const cards = [
+        {
+            icon: <Target {...ICON_PROPS} />,
+            title: 'Our Mission',
+            content: 'To empower individuals to achieve healthy, radiant skin through innovative and effective skincare solutions that blend nature and science.',
+        },
+        {
+            icon: <Lightbulb {...ICON_PROPS} />,
+            title: 'Our Vision',
+            content: 'To be a global leader in skincare, recognized for our commitment to quality, sustainability, and customer satisfaction.',
+        },
+        {
+            icon: <Gem {...ICON_PROPS} />,
+            title: 'Our Values',
+            content: 'Integrity, innovation, customer-centricity, sustainability, and a passion for enhancing skin health and beauty.',
+        },
+    ];
     return <AboutUs cards={cards} />;
 }
