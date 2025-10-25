@@ -10,7 +10,6 @@ async function main() {
       benefits: 'Deep hydration, anti-aging, brightening',
       imageUrl: '/serum.png',
       price: 29.99,
-      variant: ['50ml'],
       createdAt: new Date(),
     },
     {
@@ -19,7 +18,6 @@ async function main() {
       benefits: 'Removes makeup, hydrates, soothes',
       imageUrl: '/cream.png',
       price: 19.99,
-      variant: ['200ml'],
       createdAt: new Date(),
     },
     {
@@ -28,7 +26,6 @@ async function main() {
       benefits: 'Brightens, protects, anti-oxidant',
       imageUrl: '/serum.png',
       price: 39.99,
-      variant: ['50ml'],
       createdAt: new Date(),
     },
     {
@@ -37,7 +34,6 @@ async function main() {
       benefits: 'Overnight repair, deep nourishment, anti-aging',
       imageUrl: '/moisturizer.png',
       price: 34.99,
-      variant: ['50ml'],
       createdAt: new Date(),
     },
     {
@@ -46,7 +42,6 @@ async function main() {
       benefits: 'UV protection, non-greasy, water resistant',
       imageUrl: '/cream.png',
       price: 24.99,
-      variant: ['60ml'],
       createdAt: new Date(),
     },
     {
@@ -55,7 +50,6 @@ async function main() {
       benefits: 'Reduces fine lines, improves texture, anti-aging',
       imageUrl: '/serum.png',
       price: 49.99,
-      variant: ['30ml'],
       createdAt: new Date(),
     },
     {
@@ -64,7 +58,6 @@ async function main() {
       benefits: 'Removes dead skin, smooths texture, brightens',
       imageUrl: '/repair-cream.png',
       price: 18.99,
-      variant: ['100ml'],
       createdAt: new Date(),
     },
     {
@@ -73,7 +66,6 @@ async function main() {
       benefits: 'Removes makeup, cleanses, no rinsing required',
       imageUrl: '/micelar-water.png',
       price: 12.99,
-      variant: ['200ml'],
       createdAt: new Date(),
     },
     {
@@ -82,7 +74,6 @@ async function main() {
       benefits: 'Deep hydration, plumps skin, restores moisture barrier',
       imageUrl: '/repair-cream.png',
       price: 28.99,
-      variant: ['Lilac', 'Pink'],
       createdAt: new Date(),
     },
     {
@@ -91,7 +82,6 @@ async function main() {
       benefits: 'Minimizes pores, controls oil, improves texture',
       imageUrl: '/serum.png',
       price: 26.99,
-      variant: ['30ml'],
       createdAt: new Date(),
     },
     {
@@ -100,7 +90,6 @@ async function main() {
       benefits: 'Deep cleansing, removes impurities, controls oil',
       imageUrl: '/cream.png',
       price: 22.99,
-      variant: ['Green Clay', 'White Clay', 'Pink Clay'],
       createdAt: new Date(),
     },
     {
@@ -109,7 +98,6 @@ async function main() {
       benefits: 'Reduces dark circles, smooths fine lines, hydrates',
       imageUrl: '/repair-cream.png',
       price: 35.99,
-      variant: ['15ml'],
       createdAt: new Date(),
     },
     {
@@ -118,7 +106,6 @@ async function main() {
       benefits: 'Intense hydration, plumps skin, reduces fine lines',
       imageUrl: '/serum.png',
       price: 32.99,
-      variant: ['30ml'],
       createdAt: new Date(),
     },
     {
@@ -127,7 +114,6 @@ async function main() {
       benefits: 'Light coverage, hydration, sun protection',
       imageUrl: '/moisturizer.png',
       price: 27.99,
-      variant: ['Light', 'Medium', 'Dark'],
       createdAt: new Date(),
     },
     {
@@ -136,7 +122,6 @@ async function main() {
       benefits: 'Exfoliates, unclogs pores, improves skin texture',
       imageUrl: '/micelar-water.png',
       price: 38.99,
-      variant: ['30ml'],
       createdAt: new Date(),
     },
     {
@@ -145,7 +130,6 @@ async function main() {
       benefits: 'Repairs skin barrier, soothes irritation, long-lasting moisture',
       imageUrl: '/cream.png',
       price: 42.99,
-      variant: ['100ml'],
       createdAt: new Date(),
     },
     {
@@ -154,7 +138,6 @@ async function main() {
         benefits: 'Soothes irritation, reduces redness, hydrates',
         imageUrl: '/balm.png',
         price: 24.99,
-        variant: ['light', 'pink', 'red'],
         createdAt: new Date(),
     },
     {
@@ -163,7 +146,6 @@ async function main() {
         benefits: 'Repairs damage, anti-aging, intensive moisture',
         imageUrl: '/repair-cream.png',
         price: 45.99,
-        variant: ['50ml'],
         createdAt: new Date(),
     },
     {
@@ -172,7 +154,6 @@ async function main() {
         benefits: 'Daily protection, lightweight hydration, antioxidants',
         imageUrl: '/moisturizer.png',
         price: 25.99,
-        variant: ['75ml'],
         createdAt: new Date(),
     },
     {
@@ -181,7 +162,6 @@ async function main() {
         benefits: 'Brightens complexion, evens skin tone, antioxidant protection',
         imageUrl: '/serum.png',
         price: 38.99,
-        variant: ['30ml'],
         createdAt: new Date(),
     },
     {
@@ -190,7 +170,6 @@ async function main() {
         benefits: 'Deep cleansing, nourishing, removes waterproof makeup',
         imageUrl: '/balm.png',
         price: 28.99,
-        variant: ['100ml'],
         createdAt: new Date(),
     },
     {
@@ -199,7 +178,6 @@ async function main() {
         benefits: 'Balances pH, hydrates, prepares skin',
         imageUrl: '/micelar-water.png',
         price: 18.99,
-        variant: ['200ml'],
         createdAt: new Date(),
     },
     {
@@ -208,7 +186,6 @@ async function main() {
         benefits: 'Boosts collagen, firms skin, reduces wrinkles',
         imageUrl: '/cream.png',
         price: 52.99,
-        variant: ['50ml'],
         createdAt: new Date(),
     },
     {
@@ -217,7 +194,6 @@ async function main() {
         benefits: 'Promotes healing, reduces scarring, improves texture',
         imageUrl: '/serum.png',
         price: 46.99,
-        variant: ['30ml'],
         createdAt: new Date(),
     },
     {
@@ -226,7 +202,6 @@ async function main() {
         benefits: 'Overnight repair, deep nourishment, skin renewal',
         imageUrl: '/repair-cream.png',
         price: 34.99,
-        variant: ['50ml'],
         createdAt: new Date(),
     },
     {
@@ -235,7 +210,6 @@ async function main() {
         benefits: 'Gentle exfoliation, deep cleansing, smooth texture',
         imageUrl: '/cream.png',
         price: 21.99,
-        variant: ['150ml'],
         createdAt: new Date(),
     },
     {
@@ -244,7 +218,6 @@ async function main() {
         benefits: 'Deep nourishment, antioxidant protection, natural glow',
         imageUrl: '/serum.png',
         price: 35.99,
-        variant: ['30ml'],
         createdAt: new Date(),
     },
     {
@@ -253,7 +226,6 @@ async function main() {
         benefits: 'Deep cleansing, removes impurities, alcohol-free',
         imageUrl: '/micelar-water.png',
         price: 16.99,
-        variant: ['250ml'],
         createdAt: new Date(),
     },
     {
@@ -262,7 +234,6 @@ async function main() {
         benefits: 'Overnight repair, intensive moisture, revitalizes',
         imageUrl: '/balm.png',
         price: 41.99,
-        variant: ['50ml'],
         createdAt: new Date(),
     },
     {
@@ -271,7 +242,6 @@ async function main() {
         benefits: 'Reduces fine lines, firms skin, long-lasting hydration',
         imageUrl: '/moisturizer.png',
         price: 48.99,
-        variant: ['50ml'],
         createdAt: new Date(),
     },
     {
@@ -280,7 +250,6 @@ async function main() {
         benefits: 'Promotes healing, restores barrier, soothes irritation',
         imageUrl: '/repair-cream.png',
         price: 39.99,
-        variant: ['75ml'],
         createdAt: new Date(),
     },
     {
@@ -289,7 +258,6 @@ async function main() {
         benefits: 'Lifts sagging skin, improves elasticity, firms contours',
         imageUrl: '/serum.png',
         price: 54.99,
-        variant: ['30ml'],
         createdAt: new Date(),
     }
   ];
