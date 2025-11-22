@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 interface HeroSectionProps {
     title: string;
@@ -21,15 +22,19 @@ export default function HeroSection(props: HeroSectionProps){
                 </div>
             </div>
             <div className="w-full">
-                <img 
+                <Image 
                     src="/hero-section-mobile.png" 
                     alt="Hero section mobile" 
                     className=" w-full object-cover md:hidden" 
+                    height={300}
+                    width={400}
                 />
-                <img 
+                <Image 
                     src="/hero-section-img.png" 
                     alt="Hero section desktop" 
-                    className="hidden md:flex h-full w-full object-cover" 
+                    className="hidden sm:flex h-full w-full object-cover" 
+                    height={500}
+                    width={800}
                 />
             </div>
         </div>

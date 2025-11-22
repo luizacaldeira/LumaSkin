@@ -8,6 +8,7 @@ import {
     CardFooter,
 } from "@/components/ui/card"
 import { ImageOff } from "lucide-react";
+import Image from "next/image";
 
 export function ProductCard(props: ProductCardProps){
 
@@ -15,7 +16,7 @@ export function ProductCard(props: ProductCardProps){
         <Card className="bg-[#d9c7ea44] text-[#201324]">
             <CardHeader>
                 {props.imageUrl && (
-                    <img src={props.imageUrl} alt={props.title} className="object-cover w-full h-70 2xl:h-100" />
+                    <Image src={props.imageUrl} alt={props.title} className="object-cover w-full md:h-70 2xl:h-100" width={400} height={400}/>
                 )}
                 {!props.imageUrl && (
                     <div className="flex items-center justify-center w-full h-70 2xl:h-100 bg-[#f1edf9] text-[#201324ab]">
