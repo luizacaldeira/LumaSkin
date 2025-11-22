@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Menu, X, ShoppingCart, Home, Contact, ShoppingBasket, Settings } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Navbar() {
     const [showMobileNav, setShowMobileNav] = useState(false);
@@ -33,9 +34,9 @@ export default function Navbar() {
                     <div className="flex gap-4 lg:gap-7 uppercase text-[#59467A] text-xs lg:text-sm">
                         {navbarData.navItems.map((item, index) => (
                             <div key={item.id} className="flex items-center gap-2 lg:gap-7 ">
-                                <a href={item.path} className='hover:text-[#3a2f50] hover:scale-102 transition-all'>
+                                <Link href={item.path} className='hover:text-[#3a2f50] hover:scale-102 transition-all'>
                                     {item.label}
-                                </a>
+                                </Link>
                                 {index < navbarData.navItems.length - 1 && (
                                     <div className="w-px h-4 bg-[#59467A] opacity-30"></div>
                                 )}
@@ -44,12 +45,12 @@ export default function Navbar() {
                     </div>
                 </div>
                 <div className="flex items-center gap-2 lg:gap-4">
-                    <a href='/login' className='cursor-pointer'>{navbarData.loginButton}</a>
-                    <a href="/cart">
+                    <Link href='/login' className='cursor-pointer'>{navbarData.loginButton}</Link>
+                    {/* <a href="/cart">
                         <div className="flex h-full w-full items-center cursor-pointer transition-colors">
                             <ShoppingCart size={25} color="#59467A" />
                         </div>
-                    </a>
+                    </a> */}
                 </div>
             </div>
             <div className="md:hidden flex items-center justify-between w-full">
@@ -59,11 +60,11 @@ export default function Navbar() {
                     className="h-12"
                 />
                 <div className="flex items-center gap-4">
-                    <a href="/cart">
+                    {/* <a href="/cart">
                         <div>
                             <ShoppingCart size={24} color="#59467A" />
                         </div>
-                    </a>
+                    </a> */}
                     <button 
                         onClick={() => setShowMobileNav(!showMobileNav)}
                         className="p-2 text-[#59467A] focus:outline-none"
@@ -77,19 +78,19 @@ export default function Navbar() {
                 <div className="fixed top-12 left-0 right-0 bg-[#D9C7EA] md:hidden z-40 shadow-lg border-t border-[#59467A] border-opacity-20 rounded-b-lg">
                     <div className="flex flex-col py-4 px-6">
                         {navbarData.navItems.map((item) => (
-                            <a 
+                            <Link 
                                 key={item.id} 
                                 href={item.path} 
-                                className="flex items-center gap-3 text-[#59467A] text-sm px-2 py-3 border-b border-[#59467A] last:border-b-0 uppercase"
+                                className="flex items-center gap-3 text-[#59467A] text-sm px-2 py-2  border-b border-[#bbacd6] last:border-b-0 uppercase"
                                 onClick={() => setShowMobileNav(false)}
                             >
                                 <span className="text-lg">{item.icon}</span>
                                 <span className="font-medium">{item.label}</span>
-                            </a>
+                            </Link>
                         ))}
-                        <div className="pt-4 mt-2" onClick={() => setShowMobileNav(false)}>
+                        <Link href={'/login'} className='mt-3'>
                             {navbarData.loginButton}
-                        </div>
+                        </Link>
                     </div>
                 </div>
             )}
