@@ -21,13 +21,14 @@ export default function HeroSection(props: HeroSectionProps){
                     >see more</button>
                 </div>
             </div>
-            <div className="relative w-full h-92 overflow-hidden">
+            <div className="relative w-full h-70 md:h-90 lg:h-100 2xl:h-120 overflow-hidden">
                 <Image 
                     src="/ramo1.png" 
                     alt="Decorative branch" 
                     height={200}
                     width={200}
-                    className="absolute top-2 -left-8 object-contain rotate-12 animate-fade-up animate-once animate-duration-1000 animate-ease-out"
+                    className="absolute top-0 -left-12 md:-left-15 object-contain rotate-12 h-80 md:h-90 lg:h-120
+                    animate-fade-up animate-once animate-duration-1000 animate-ease-out"
                     loading="lazy"
                 />
                 <Image 
@@ -35,7 +36,11 @@ export default function HeroSection(props: HeroSectionProps){
                     alt="Serum product" 
                     height={230}
                     width={230}
-                    className="absolute top-22 left-25 object-contain -rotate-[22deg] animate-fade-down animate-once animate-duration-800 animate-delay-[10ms] animate-ease-out"
+                    className="absolute top-10 md:top-25 lg:top-0 left-5 md:left-2 lg:left-17
+                    h-60 md:h-60 lg:h-120 2xl:h-120
+                    object-contain 
+                    -rotate-[22deg] 
+                    animate-fade-down animate-once animate-duration-800 animate-delay-[10ms] animate-ease-out"
                     priority
                     />  
                 <Image 
@@ -43,7 +48,12 @@ export default function HeroSection(props: HeroSectionProps){
                     alt="Product cap" 
                     height={150}
                     width={150}
-                    className="absolute top-10 left-65 object-contain animate-fade-right animate-duration-1000 animate-delay-[20ms] animate-ease-out"
+                    className="absolute 
+                    top-5 md:top-10 lg:top-15
+                    left-40 md:left-35 lg:left-65
+                    h-25 lg:h-40
+                    
+                    object-contain animate-fade-right animate-duration-1000 animate-delay-[20ms] animate-ease-out"
                     loading="lazy"
                 />
                 <Image 
@@ -51,7 +61,10 @@ export default function HeroSection(props: HeroSectionProps){
                     alt="Cream cap" 
                     height={160}
                     width={160}
-                    className="absolute top-40 left-80 object-contain animate-fade-left animate-duration-1000 animate-delay-[25ms] animate-ease-out"
+                    className="absolute
+                    top-30 md:top-35 lg:top-45                    left-50 md:left-45 lg:left-75
+                    h-30 lg:h-45
+                    object-contain animate-fade-left animate-duration-1000 animate-delay-[25ms] animate-ease-out"
                     loading="lazy"
                 />
                 <Image 
@@ -59,7 +72,12 @@ export default function HeroSection(props: HeroSectionProps){
                     alt="Decorative branch" 
                     height={300}
                     width={300}
-                    className="absolute -top-20 right-0 object-contain -rotate-[220deg] animate-fade-up animate-duration-1000 animate-delay-[30ms] animate-ease-out"
+                    className="absolute 
+                    -top-40 md:-top-20 lg:-top-20
+                    -right-45 md:-right-35 lg:-right-10 
+
+                    -rotate-[160deg] md:-rotate-[200deg]
+                    object-contain animate-fade-up animate-duration-1000 animate-delay-[30ms] animate-ease-out"
                     loading="lazy"
                 />
             </div>
