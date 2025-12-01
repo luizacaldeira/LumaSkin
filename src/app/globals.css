@@ -1,5 +1,6 @@
+/* tailwind css v4.x */
 @import "tailwindcss";
-@import "tw-animate-css";
+@import "tailwindcss-animated";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -127,6 +128,12 @@
     background: radial-gradient(ellipse at 50% 50%, #79639e 0%, #e0d0f0 50%, #f8f6fb 100%);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
+}
+
+.animated-hero-gradient {
+    background: radial-gradient(ellipse at 50% 50%, #b092e2 0%, #e0d0f0 50%, #f8f6fb 100%);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
 }
 
 @keyframes gradientAnimation {

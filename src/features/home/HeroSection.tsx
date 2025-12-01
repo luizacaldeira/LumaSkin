@@ -11,7 +11,7 @@ interface HeroSectionProps {
 export default function HeroSection(props: HeroSectionProps){
     const router = useRouter();
     return(
-        <div className="flex flex-col md:flex-row justify-between bg-[#D9C7EA] h-fit text-[#59467A]">
+        <div className="flex flex-col md:flex-row justify-between animated-hero-gradient h-fit text-[#59467A]">
             <div className=" flex flex-col w-full gap-4 justify-center px-4 md:px-13 py-10">
                 <div className="text-4xl lg:text-6xl 2xl:text-8xl font-radley italic">{props.title}</div>
                 <div className="text-xs lg:text-sm 2xl:text-lg">{props.subtitle}</div>
@@ -21,20 +21,46 @@ export default function HeroSection(props: HeroSectionProps){
                     >see more</button>
                 </div>
             </div>
-            <div className="w-full">
+            <div className="relative w-full h-92 overflow-hidden">
                 <Image 
-                    src="/hero-section-mobile.png" 
-                    alt="Hero section mobile" 
-                    className=" w-full object-cover md:hidden" 
-                    height={300}
-                    width={400}
+                    src="/ramo1.png" 
+                    alt="Decorative branch" 
+                    height={200}
+                    width={200}
+                    className="absolute top-2 -left-8 object-contain rotate-12 animate-fade-up animate-once animate-duration-1000 animate-ease-out"
+                    loading="lazy"
                 />
                 <Image 
-                    src="/hero-section-img.png" 
-                    alt="Hero section desktop" 
-                    className="hidden sm:flex h-full w-full object-cover" 
-                    height={500}
-                    width={800}
+                    src="/serumhero.png" 
+                    alt="Serum product" 
+                    height={230}
+                    width={230}
+                    className="absolute top-22 left-25 object-contain -rotate-[22deg] animate-fade-down animate-once animate-duration-800 animate-delay-[10ms] animate-ease-out"
+                    priority
+                    />  
+                <Image 
+                    src="/tampa.png" 
+                    alt="Product cap" 
+                    height={150}
+                    width={150}
+                    className="absolute top-10 left-65 object-contain animate-fade-right animate-duration-1000 animate-delay-[20ms] animate-ease-out"
+                    loading="lazy"
+                />
+                <Image 
+                    src="/creamtampa.png" 
+                    alt="Cream cap" 
+                    height={160}
+                    width={160}
+                    className="absolute top-40 left-80 object-contain animate-fade-left animate-duration-1000 animate-delay-[25ms] animate-ease-out"
+                    loading="lazy"
+                />
+                <Image 
+                    src="/ramo2.png" 
+                    alt="Decorative branch" 
+                    height={300}
+                    width={300}
+                    className="absolute -top-20 right-0 object-contain -rotate-[220deg] animate-fade-up animate-duration-1000 animate-delay-[30ms] animate-ease-out"
+                    loading="lazy"
                 />
             </div>
         </div>
