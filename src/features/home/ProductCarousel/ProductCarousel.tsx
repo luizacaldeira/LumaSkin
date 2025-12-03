@@ -1,66 +1,70 @@
 'use client'
 import { ProductCard } from "@/components/product-cards/ProductCard";
 import { ProductListProps } from "@/components/product-cards/types";
-import useEmblaCarousel from "embla-carousel-react";
-import { useCallback, useEffect, useState } from "react";
+import { Pagination, Scrollbar, A11y, Autoplay, EffectCoverflow } from 'swiper/modules';
+import { useEffect } from "react";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { useRouter } from "next/navigation";
+import '../../../app/globals.css';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
+
+
+
 
 export default function ProductCarousel({ products }: ProductListProps) {
-    const [emblaRef, emblaApi] = useEmblaCarousel({ 
-        loop: true,
-        slidesToScroll: 1,
-        breakpoints: {
-            '(min-width: 768px)': { slidesToScroll: 2 },
-            '(min-width: 1024px)': { slidesToScroll: 3 }
-        }
-    });
 
-    const [canScrollPrev, setCanScrollPrev] = useState(false);
-    const [canScrollNext, setCanScrollNext] = useState(false);
+    const router = useRouter();
 
-    const scrollPrev = useCallback(() => {
-        if (emblaApi) emblaApi.scrollPrev();
-    }, [emblaApi]);
+    const handleButtonClick = (productId: number) => {
+        router.push('/individual-product/' + productId);
+    };
 
-    const scrollNext = useCallback(() => {
-        if (emblaApi) emblaApi.scrollNext();
-    }, [emblaApi]);
-
-    const onSelect = useCallback(() => {
-        if (!emblaApi) return;
-        setCanScrollPrev(emblaApi.canScrollPrev());
-        setCanScrollNext(emblaApi.canScrollNext());
-    }, [emblaApi]);
-
-    useEffect(() => {
-        if (!emblaApi) return;
-        onSelect();
-        emblaApi.on('select', onSelect);
-        emblaApi.on('reInit', onSelect);
-    }, [emblaApi, onSelect]);
 
     return (
         <section className="py-20 bg-[#f9fafb]">
-            <div className="container mx-auto px-0 lg:px-4">
-                <p className="pl-18 text-4xl md:text-5xl mb-8 text-[#59467A] font-radley italic">our products</p>
-                <div className="relative">
-                    <button
-                        className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white text-[#59467A] shadow-lg flex items-center justify-center transition-all duration-300 cursor-pointer ${
-                            !canScrollPrev
-                                ? 'opacity-50 cursor-not-allowed'
-                                : 'hover:bg-[#d9c7ea44] hover:shadow-xl hover:scale-105'
-                        }`}
-                        onClick={scrollPrev}
-                        disabled={!canScrollPrev}
+            <div className="container mx-auto px-0 lg:px-4 h-fit">
+            <p className="pl-10 text-4xl md:text-5xl mb-8 text-[#59467A] font-radley italic">our products</p>
+                <div className="px-4 md:px-8 h-fit">
+                    <Swiper
+                        speed={2000}
+                        grabCursor={true}
+                        centeredSlides={true}
+                        modules={[Pagination, Autoplay, EffectCoverflow]}
+                        slidesPerView={1}
+                        spaceBetween={16}
+                        breakpoints={{
+                            640: { 
+                                slidesPerView: 2,
+                                spaceBetween: 20 
+                            },
+                            1024: { 
+                                slidesPerView: 3,
+                                spaceBetween: 35
+                            },
+                        }}
+                        pagination={{ 
+                            clickable: true,
+                            el: ".custom-swiper-pagination",
+                        }}
+                        loop={true}
+                        autoplay={{ delay: 50, disableOnInteraction: false, pauseOnMouseEnter: true }}
+                        effect={"coverflow"}
+                        coverflowEffect={{
+                            rotate: 8,          // leve inclinação; moderno sem exagero
+                            stretch: -10,       // puxa levemente para dentro (sofisticado)
+                            depth: 140,         // profundidade suficiente para destacar o central
+                            modifier: 1,
+                            slideShadows: false // sombra do slide é feia pra produto – desabilite
+                        }}
+                        className="w-full"
                     >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                        </svg>
-                    </button>
-
-                    <div className="overflow-hidden mx-16" ref={emblaRef}>
-                        <div className="flex">
-                            {products.map((product, index) => (
-                                <div key={index} className="flex-[0_0_100%] min-w-0 px-2 md:flex-[0_0_50%] lg:flex-[0_0_33.333%]">
+                        {products.map((product) => (
+                            <SwiperSlide key={product.id} className="h-fit">
+                                <div className="rounded-lg" onClick={() => handleButtonClick(product.id)}>
                                     <ProductCard
                                         id={product.id}
                                         title={product.title} 
@@ -68,25 +72,13 @@ export default function ProductCarousel({ products }: ProductListProps) {
                                         price={product.price}
                                         description={product.description}
                                         benefits={product.benefits}
+                                        customized={true}
                                     />
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    <button
-                        className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full bg-white text-[#59467A] shadow-lg flex items-center justify-center transition-all duration-300 cursor-pointer ${
-                            !canScrollNext 
-                                ? 'opacity-50 cursor-not-allowed' 
-                                : 'hover:bg-[#d9c7ea44]  hover:shadow-xl hover:scale-105'
-                        }`}
-                        onClick={scrollNext}
-                        disabled={!canScrollNext}
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                    <div className="custom-swiper-pagination mt-5"></div>
                 </div>
             </div>
         </section>

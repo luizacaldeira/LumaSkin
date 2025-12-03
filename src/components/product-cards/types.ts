@@ -9,6 +9,7 @@ id: number;
     updatedAt?: Date;
     buttonText?: string;
     onButtonClick?: () => void;
+    customized?: boolean;
 }
 
 export interface ProductListProps {

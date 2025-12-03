@@ -13,10 +13,10 @@ import Image from "next/image";
 export function ProductCard(props: ProductCardProps){
 
     return (
-        <Card className="bg-[#d9c7ea44] text-[#201324]">
+        <Card className="bg-[#e7e2ec] text-[#201324] cursor-pointer overflow-hidden shadow-sm hover:bg-[#cfc1e9] transition-all duration-400 ease-in-out">
             <CardHeader>
                 {props.imageUrl && (
-                    <Image src={props.imageUrl} alt={props.title} className="object-cover w-full md:h-70 2xl:h-100" width={400} height={400}/>
+                    <Image src={props.imageUrl} alt={props.title} className={`object-contain w-full md:h-70 2xl:h-90 ${props.customized ? "hover:scale-110 transition-all duration-350 ease-in-out" : ""}`} width={400} height={400}/>
                 )}
                 {!props.imageUrl && (
                     <div className="flex items-center justify-center w-full h-70 2xl:h-100 bg-[#f1edf9] text-[#201324ab]">
