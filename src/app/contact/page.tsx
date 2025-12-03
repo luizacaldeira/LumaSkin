@@ -6,10 +6,10 @@ import StoreMap from "../../components/store-map";
 
 export default function ContactPage() {
     return (
-        <div className="flex flex-col p-5 py-12 gap-5">
-            <div className="flex flex-col lg:flex-row gap-5">
+        <div className="flex flex-col p-5 py-12 gap-5 h-fit pt-17">
+            <div className="flex flex-col lg:flex-row gap-14">
                 <div className="flex flex-col bg-[#d9c7eabe] text-[#312742] w-full p-6 gap-3 rounded-2xl">
-                    <p className="font-radley text-3xl">send a message</p>
+                    <p className="font-montserrat text-2xl">Send a Message</p>
                     <ContactForm />
                 </div>
                 <div className="flex flex-col bg-white w-full gap-5">

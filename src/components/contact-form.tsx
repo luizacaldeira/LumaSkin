@@ -1,6 +1,7 @@
 'use client'
 
 import FormInput from "@/components/ui/form-input";
+import { SendHorizontal } from "lucide-react";
 import { useState } from "react";
 
 export type emailTemplate = {
@@ -56,7 +57,7 @@ export default function ContactForm() {
 
     return(
         <div>
-            <form className="flex flex-col gap-0 w-full" onSubmit={handleSubmit}>
+            <form className="flex flex-col gap-4 w-full" onSubmit={handleSubmit}>
                     {formMessage !== "" && (
                         <div>
                             {success ? (
@@ -75,8 +76,11 @@ export default function ContactForm() {
                 <FormInput label="Subject" placeholder="Type the subject..." type="text" name="subject" value={emailData.subject} onChange={handleChange} />
                 <FormInput label="Message" placeholder="Type your message..." type="text" name="message" textarea={true} value={emailData.message} onChange={handleChange} />
                 <button 
-                className="bg-[#493a64bd] text-[#F1EDF9] font-radley italic text-sm sm:text-base md:text-lg lg:text-xl px-2 py-1 sm:px-2.5 sm:py-1 md:px-4 md:py-1 rounded-md cursor-pointer hover:bg-[#312742] hover:scale-101 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md w-full mt-4"
-                type="submit">send now</button>
+                className="bg-[#493a64bd] text-[#F1EDF9] text-sm sm:text-base md:text-lg lg:text-xl px-10 py-1 sm:py-1 md:py-1 rounded-md cursor-pointer hover:bg-[#312742] hover:scale-101 transition-all duration-300 ease-in-out shadow-sm hover:shadow-md w-fit mt-4 flex justify-center items-center gap-1"
+                type="submit">
+                    Send
+                    <SendHorizontal strokeWidth={1.5} className="h-5"/>
+                </button>
             </form>
         </div>
     );
