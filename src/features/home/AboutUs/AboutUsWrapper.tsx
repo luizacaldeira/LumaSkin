@@ -3,7 +3,7 @@ import { Target, Lightbulb, Gem } from 'lucide-react';
 
 const ICON_COMPONENTS = [Target, Lightbulb, Gem];
 const ICON_PROPS = {
-    className: 'w-14 h-14 mx-auto mb-4 text-[#59467A]',
+    className: 'w-14 h-14 mx-auto mb-4 text-[#59467A] hover:text-[#493a64] animate-pulse animate-infinite animate-duration-[2000ms] animate-ease-linear',
     strokeWidth: 1
 } as const;
 
